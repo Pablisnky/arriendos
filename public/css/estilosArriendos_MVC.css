@@ -1,0 +1,1040 @@
+charset "UTF-8";
+header, section, body, footer, aside, nav, article, figure {
+display: block;
+margin: 0;
+padding: 0;
+box-sizing: border-box;
+}
+/* ******************************************************************************** */
+*{
+	margin: 0px;
+	padding: 0px;
+	font-family: 'Montserrat', sans-serif;
+	font-size: 15px;
+	box-sizing: border-box;
+}
+a{
+	text-decoration: none;
+}
+body{
+	height: 100%;
+}
+footer{
+	background:rgba(4, 6, 82, 0.1);
+	height: 26%;
+	width: 100%;
+	color:#040652;
+	position: relative; 
+	bottom: 0pt;
+	border-top-color: #040652;
+	border-top-style: solid;
+	border-top-width: 2px;
+}
+html{
+	height: 100%;
+}
+h2{/*inicio.php*/
+    font-size: 1.5em;
+    text-align: center;
+    padding: 3%;
+}
+input[type=email], input[type=password], input[type=text]{/*inicio.php*/
+    padding: 1%;
+    width: 95%;
+    margin-bottom: 4%;
+    text-align: center;
+}
+input[type=submit]{/*inicio.php*/
+    background-color: rgb(4, 6, 82);
+    color: white;
+    border-radius: 15px;
+    padding: 1%;
+    display: block;
+    width: 30%;
+    margin: auto;
+    margin-bottom: 4%;
+    text-align: center;
+    border-color: black;
+}
+input[type=submit]:hover{/*principal.php*/
+    cursor: pointer;
+}
+input[type=radio]{/*nuevaP_Casas.php*/
+	margin-top: 2%;
+	margin-left: 4%;
+	margin-bottom: 4%;
+}
+.textarea_1{/*editarCasa_V.php*/
+	display: block;
+	width: 95%;
+}
+.a_1{/*index.php*/
+	position: fixed;
+	bottom: 5pt;
+	font-weight: bold;
+	font-size: 1.8em;
+	margin-left: 40%;
+	z-index: 1;
+	color: yellow;
+}
+.a_2{/*perfil.php*/
+    display: inline-block;
+    text-align: right;
+    padding-right: 1%;
+    color: white;
+    text-decoration: none;
+    line-height: 50px;
+    font-weight: bold;
+    width: 13%;
+    background-color: rgb(40, 41, 109);
+}
+.a_2:hover{/*perfil.php*/
+	background-color: rgb(153, 154, 214);
+	color: rgb(3, 3, 15);
+}
+.a_3{/*header.php   header_2.php*/
+	text-align: right;
+	color: white;
+	background-color: #040652;
+	line-height: 20px;
+	padding-top: 0.5%;
+	position: absolute;
+	top: 0%;
+	left: 91%;
+}
+.a_3:hover{/*index.php  header.php   header_2.php*/
+	background-color:rgb(153, 154, 214);
+}
+.a_3a{/*index.php  header.php   header_2.php*/
+	left: 83%;
+}
+.a_3b{/*header.php */
+	left: 2%;
+}
+.a_3c{/*header.php */
+	left: 12%;
+}
+.a_3d{/*header_2.php */
+	left: 69%;
+}
+.a_3e{/*header_2.php */
+	left: 74%;
+}
+.a_3f{/*header.php */
+	left: 22%;
+}
+.a_5{/*descripcion_habitacion_V.php*/
+	display: block;
+	text-align: center;
+	font-size: 1.2em;
+	color: #040652;
+	padding-bottom: 4%;
+}
+.a_6{/*editarCasa_V.php*/
+	display: block;
+	font-size: 1.1em;
+	text-align: left;
+	padding-left: 15%;
+}
+.a_8{/*tarifas_V.php*/
+	font-size: 1.5em;
+	text-align: center;
+	padding: 1% 2%;
+	border-radius: 15px;
+	background-color: #040652;
+	color: white;
+	cursor: pointer;
+}
+.a_8:hover{/*tarifas_V.php*/
+	background-color: rgb(153, 154, 214);
+	color: #040652;
+	/* border-style: solid;
+	border-width: 1px;
+	border-color: #040652; */
+}
+.boton_1{/*descripcion_casa.php  descripcion_habitacion.php  formasPago_V.php recibeRegistro.php  InsertarCOdigo.php*/
+	background-color: #040652;
+	color: white;
+	display: block;
+	width: 8%;
+	padding: 0.5% 1.5%;
+	border-radius: 15px;
+	cursor: pointer;
+	text-align: center;
+	margin: auto;
+}
+.boton_2{/*formasPago_V.php*/
+	text-align: center;
+	width: 18%;
+}
+.fieldset_4{/*editarCasa_V.php   datosPersoanles.php   nuevaP_Casa.php*/
+    padding: 5%;
+    width: 90%;
+    border-radius: 15px;
+	margin: 5% auto;
+}
+.Afiliacion_5{/*inicio.php  */
+    padding: 2%;
+    width: 40%;
+    border-radius: 15px;
+	margin: 27% auto 0% auto;
+}
+.boton_3{/*tarifas_Natural_V.php*/
+	/* position: initial;
+	width: 15%;
+	text-align: center;*/
+	margin-top: 10% !important;	
+	width: 20%;
+	background-color: #040652;
+	color: white;
+	display: block;
+	padding: 0.5% 1.5%;
+	margin:auto;
+	border-radius: 15px;
+	cursor: pointer;
+	text-align: center;
+}
+.boton_4{/*tarifas_Natural_V.php*/
+	margin-top: 2% !important;
+	margin-bottom: 10%;
+}
+.caption_1{/*registros_habitaciones_V.php*/
+	background-color: rgb(114, 118, 226);
+	font-size: 1.3em;
+	padding: 0.5%;
+	font-weight: bold;
+}
+.comandoMenu{/*header.php*/
+	display: none;
+}
+.contenedor_1{/*registro.php  inicio.php*/
+	width:40%;
+	margin: auto;
+}
+.contenedor_10{/*entrada_V.php*/
+	background-color:  rgb(4, 6, 82) ;
+	position: fixed;
+	width: 100%;
+	top: 0%;
+}
+.contenedor_11{/*inicio.php*/
+    width: 35%;
+    margin: auto;
+}
+.contenedor_12{/*inicio.php*/
+    border-radius: 15px;
+    margin: 15% auto;
+}
+.contenedor_13{/*inicio.php*/
+	text-align: center;
+	margin-bottom: 10%;
+}
+.contenedor_16{/*inicio.php */
+	background-color: rgba(0,0,0,0.8);
+	width: 100%;
+	height: 100vh;
+	position: absolute;
+	top: 0%;
+	left: 0%;
+	display: none;
+	z-index: 4;
+	margin-top: 0%; 
+}
+.contenedor_17{/*publicar.php */
+	/* background-color: rgba(0,0,0,0.8); */
+	margin: auto;
+	width: 70%;
+	text-align: center;
+}
+.contenedor_18{/*perfil.php*/
+	float: left; 
+	width: 30%; 
+	margin-left: 2%;
+}
+.contenedor_19{/*perfil.php*/
+	float: right; 
+	width: 67%; 
+	margin-right: 1%;
+	margin-top: 2%;
+}
+.contenedor_20{/*nuevaP.php  publicacion_V.php*/
+	width: 70%;
+	margin: auto;
+	margin-top: 15%;
+	min-height: 42%;
+}
+.contenedor_20_a{/*nuevaP.php*/
+	width: 70%;
+	margin: auto;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}
+.contenedor_21{/*nuevaP.php  publicacion_2_V.php*/
+	width: 100%;
+	margin: auto;
+	margin-top: 15%;
+	margin-bottom: 10%;
+}
+.contenedor_21_a{/*publicacion_2_V.php*/
+	width: 70%;
+	margin: auto;
+	margin-top: 5%;
+	display: flex;
+	justify-content: space-between;
+}
+.contenedor_21b{/*publicacion_2_V.php*/
+	display: none;
+}
+.contenedor_22{/*publicacion_casa3_V.php*/
+	width: 40%;
+	margin-top: 7%;
+	margin-left: 10%;
+}
+.contenedor_23{/*editarCasa_V.php*/
+	/* display: grid;
+	grid-template-columns: 22% 22% 22%  22%; */
+	width: 40%;
+	margin-left: 5%;
+}
+.contenedor_24{/*editarCasa_V.php*/
+	margin-left:5%;
+	width: 90%;
+	object-fit: cover !important;
+	overflow: hidden;
+}
+.contenedor_25{/*filtro_V.php*/
+	display: grid;
+	grid-template-columns: 33fr 33fr 33fr;
+	margin: 1% auto;
+	margin-bottom: -1%;
+	justify-items: center;
+	width: 60%;
+}
+.contenedor_26{/*filtro_V.php*/
+	text-align: center;
+	margin: auto;
+	height: 60px;
+}
+.contenedor_27{/*descripcion_habitacion_V.php*/
+	display: grid;
+	grid-template-columns: 50fr 50fr ;
+	height: 50% !important;
+}
+.contenedor_28{/*descripcion_habitacion_V.php */
+	display: grid;
+	grid-template-columns: 50fr 50fr;
+	grid-template-rows: 40fr 40fr 20fr;
+	max-height: 60%; 
+}
+.contenedor_29{/*descripcion_habitacion_V.php*/
+	background-color:rgba(196, 197, 228, 0.2);
+	height: 100%;
+	padding: 2% 2% 2% 5%;
+}
+.contenedor_31{/*descripcion_habitacion_V.php*/
+	width: 100%; 
+	overflow: hidden;
+}
+.contenedor_32{/*descripcion_habitacion_V.php*/
+	 width: 100%; 
+	overflow: hidden;
+}
+.contenedor_32 ul{/*descripcion_habitacion_V.php*/
+	padding: 0;
+	display: flex;
+}
+.contenedor_32 li{/*descripcion_habitacion_V.php*/
+	width: 100%;
+    list-style: none;
+	object-fit: cover !important ; 
+	cursor: pointer;
+}
+.contenedor_32 img{/*descripcion_habitacion_V.php*/
+	width: 100%;
+	object-fit: cover !important ; 
+	height: 70px ;
+}
+.contenedor_33{/*descripcion_habitacion_V.php*/
+	display: grid;
+	grid-template-columns: 100%;
+	grid-template-rows: 80fr 20fr;
+	max-height: 80%;
+}
+.Contenedor_35{/*filtro_V.php*/
+	display: none;
+}
+.contenedor_36{/*editarCasa_V.php*/
+	margin-top: 5%;
+	text-align: center;
+	height: 50px;
+}
+.contenedor_37{/*entrada_V.php*/ 
+	margin-top: 10% !important;
+	margin: auto;
+	width: 80%;
+	min-height: 50%;
+}
+.contenedor_40{/*registrar_Pago_V.php*/
+	width: 60%;
+	margin-top: 13% !important;
+	margin: auto;
+	min-height: 52%;
+}
+.contenedor_43{/*descripcion_Habitacion_V.php*/
+	background-color: #040652;
+	text-align: center;
+	/* height: 80px; */
+	height: 50px ;
+}
+.contenedor_44{/*inicio_V.php*/
+	height: 40vw !important;
+}
+.contenedor_45{/*filtro_V.php*/
+	min-height: 65%;
+}
+.contenedor_46{/*footer.php*/
+	width: 20%;
+	margin-left: auto;
+	float: right;
+	margin-top: 3%;
+	text-align: center;
+}
+.contenedor_47{/*editarCasa_V.php   editaConf_Habitacion.php*/
+	width: 20%; 
+	left: 65%; 
+	top: 30%; 
+	float: right;
+	position: fixed;
+}
+.contenedor_48{/*tarifas_V.php   tarifas_Costructoras_.php*/
+	margin-top: -2%;
+	margin-bottom: 5%;
+}
+.contenedor_52{/*tarifas_V.php */
+	display: flex;
+	justify-content: space-between;
+	width: 50%; 
+	margin: 5% auto;
+}
+.contenedor_53{/*footer.php*/
+	width: 15%;
+	margin-left: auto;
+	float: right;
+	margin-top: 3%;
+	text-align: center;
+}
+.contenedor_54{/*footer.php*/
+	width: 15%;
+	margin-left: auto;
+	float: right;
+	margin-top: 3%;
+	margin-right: 2%;
+	text-align: center;
+}
+.contenedor_56{/*descripcion_habitacion_V.php*/
+	display: flex; 
+	/* justify-content: space-between; */
+}
+.contenedor_57{/*descripcion_habitacion_V.php*/
+	margin-right: 20%;
+}
+.contenedor_62{/*formasPago_v.php*/
+	width: 100%;
+	margin: 10% auto;
+	min-height: 80%;
+}
+.contenedor_62a{/*formasPago_v.php*/
+	margin-bottom: 20%;
+}
+.contenedor_63{/*formasPago_V.php*/
+	width: 45%;
+	margin: 10% auto;
+}
+.contenedor_64{/*formasPago_V.php*/
+	width: 60%;
+}
+.contenedor_65{/*formasPago_V.php*/
+	position: absolute;
+	top: 2%;
+	left: 2%;
+	width: 20%;
+	overflow: hidden;
+}
+.contenedor_66{/*filtro_V.php*/
+	display:none;
+	width: 20%;
+	margin: auto;
+	margin-top: 7%;
+	text-align: center;
+}
+.enlace_2{/*header.php*/
+	color: white;
+	font-size: 1.3em !important;
+	display: block;
+	width: 90% !important;
+	text-align: center;
+}
+.enlace_2:hover{/*index.php*/
+	background-color: rgb(153, 154, 214);
+	color: rgb(3, 3, 15);	
+}
+.enlace_2a{/*index.php*/
+	color: rgba(255, 255, 255, 0.4);
+	cursor: auto;
+}
+.enlace_2a:hover{/*index.php*/
+	background-color: #040652;
+	color: rgba(255, 255, 255, 0.4);	
+}
+.etiqueta_1{/*nuevaP_Casa.php*/
+	font-size: 1.2em;
+}
+.fieldset_1{/*registro.php*/
+	width: 80%;
+	padding: 2%;
+	margin: auto;
+	border-radius: 15px;
+}
+.fieldset_4{/*inicio.php   datosPersoanles.php   nuevaP_Casa.php*/
+    padding: 5%;
+    width: 90%;
+    border-radius: 15px;
+	margin: 5% auto;
+}
+.generic_1{/*entrada_V.php*/
+	margin-right: 20px;
+}
+.h1_1{/*tarifas_Natural_V.php  tarifas_Constructoras_V.php*/
+	font-family:'Cinzel' ;
+	font-size: 2.2em;
+	margin-top: 7%;
+	text-align: center;
+	color: #040652;
+	font-weight: bold;
+}
+.hr_1{/*header.phph  header_2.php*/
+	margin-right: 1%;
+}
+.hr_2{/*footer.php*/
+	width: 90%;
+	margin: 1% auto;
+	height: 0.5px !important;
+}
+.imagen{/*inicio_V.php */
+	width: 25%;
+	object-fit:contain ;/* deseado cover */
+	filter: brightness(110%);
+	margin: auto;
+	margin-top: 2%;
+	display: block;
+}
+.img_1{/*editarPerfil.php*/
+	width: 20%;
+}
+.imagen_2{/*perfil.php*/
+	max-width:10%;
+}
+.imagen_3{/*perfil.php*/
+	max-width:40%;
+}
+.imagen_4{/*entrada_V.php*/
+	width:100px;
+	height: 100px;
+	margin-right: 5%;
+}
+.imagen_6{/*footer.php*/
+	max-width:6%;
+	position: relative;
+	top: 3%;
+	left: 1%;
+}
+.imagen_7{/*descripcion_habitacion_V.php*/
+	position: absolute;
+	width: 50%;
+	max-height: 490px;
+	opacity: 0;
+}
+.imagen_8{/*formasPago_V.php*/
+	width: 100%;
+	object-fit: fill ;	
+}
+.imagen_9{/*descripcion_habitacion_V.php*/
+	opacity: 1;
+}
+.imagen_10{/*descripcion_habitacion_V.php*/
+	width: 95% !important;
+	margin: auto;
+	cursor: pointer;
+	border-color: #040652;
+	border-width: 1px;
+	border-style: solid;
+	object-fit: fill; /*fill, cover, contain, none, scale-down, inherit, initial, unset*/	
+}
+.Inicio_1{/*configurarT.php  background-color:#F4FCFB;*/
+	background-color:transparent ;
+	font-family: calibri;
+	font-size:30px;
+	width: 80%;
+	text-align: left;
+	margin: 0% 2%;
+	border: none;
+}
+.Inicio_2{/*footer.phph*/
+	font-weight: bold;
+} 
+.Inicio_7{/*index.php */
+	color: white;
+	font-family: 'Raleway', sans-serif;
+	text-align: center;
+	text-decoration: none; 
+ 	font-size: 30px; 
+ 	position: absolute;
+ 	top: 13%;
+ 	left: 80%;
+ 	z-index: 1
+}
+.Inicio_10{/*inicio_V.php*/
+	color: rgb(4, 6, 82);
+	margin: auto;
+	margin-top: 5%;
+	text-align: center;
+	font-size: 2em;
+	font-weight: bold;
+}
+.Inicio_11{/*inicio_V.php */
+	color: rgb(4, 6, 82);
+	text-align: center;
+	font-size: 2.8em;
+	font-weight: bolder;
+}
+.input_1{/*nuevaP_Casa.php*/
+	text-align: left !important;
+}
+.input_2{/*perfil.php*/
+	background-color:rgb(236, 236, 249);
+	color: #040652;
+    position: absolute;
+    display: block;
+    top: 0%;
+    left: 85%;
+    width: 15% !important;
+    border: none;
+	font-weight: bold;
+	font-size: 1.2em;
+}
+.input_3{/*nuevaP_Casa.php*/
+	width: 30% !important;
+	display: block;
+}
+.input_4{/*descripcion_casa_V.php   descripcion_habitacion_V.php*/
+	background-color: rgba(196, 197, 228, 0);
+	border: none;
+	width: 100% !important;
+	font-size: 1.2em;
+	color: #040652;
+}
+.input_6{/*registrar_Pago_V.php    recibeCorreo.php*/
+	margin: auto ;
+	display: block;
+	margin-top: 5%;
+	font-size: 1.3em;
+	width: 40% !important;
+}
+.input_7{/*editarCasa_V.php*/
+	position: fixed;
+	top: 75%;
+	left: 70%;
+	width: 10% !important;
+}
+.label_1{/*inicio.php nuevaP_Casa.php*/
+    margin:5% auto;
+    display: block;
+    text-align: center;
+    width: 40%;
+    background-color:rgb(4, 6, 82);
+    border-radius: 15px;
+    padding: 1.5%;
+    color: white;
+    font-weight: bold;
+    border-color: black;
+    border-style: solid;
+    border-width: 1px;
+}
+.label_1:hover{
+    cursor: pointer;
+}
+.label_2{/*inicio,php*/
+    color:#040652 ;
+    display: block;
+    width: 30%;
+    margin: auto;
+    margin-bottom: 4%;
+    text-align: center;
+    font-weight: bold;
+	text-decoration: none;
+	cursor: pointer;
+}
+.label_3{/*publicar.php*/
+	font-size: 2em;
+	display: block;
+	text-align: center;
+	margin-top: 3%;
+}
+.label_4{/*entrada.php*/
+    width: 70% !important;
+    background-color:  rgb(183, 149, 11);
+}
+.label_5{/*publicar.php*/
+	font-size: 1.6em;
+	font-family: 'Courier New', Courier, monospace;
+	font-weight: bold;
+	background-color: rgb(213, 214, 219);
+	display: block;
+	width: 40%;
+	text-align: center;
+	margin: 2% auto;
+	padding: 2%;
+	border-radius: 20px;
+}
+.label_6{/*tarifas_Natural_V.php*/
+	font-size: 1.6em;
+	font-family: 'Courier New', Courier, monospace;
+	font-weight: bold;
+	border-color: #040652;
+	border-style: solid;
+	border-width:2px;
+	display: inline-block;
+	width: 40%;
+	text-align: center;
+	margin: 2% auto;
+	padding: 2%;
+	border-radius: 20px;
+}
+.label_7{/*publicar.php*/
+	font-size: 1.6em;
+	font-family: 'Courier New', Courier, monospace;
+	font-weight: bold;
+	background-color: rgb(213, 214, 219);
+	display: inline-block;
+	width: 40%;
+	text-align: center;
+	margin: 2% auto;
+	padding: 2%;
+	border-radius: 20px;
+}
+.label_8{/*nuevaP.php*/
+	display: block;
+	font-size:2em ;
+	text-align: center;
+	margin-bottom: 8%;
+}
+.label_9{/*publicacion_2_V.php*/
+	font-size: 1.5em;
+	background-color: #040652;
+	color: white;
+	padding: 1.5%;
+	border-radius: 30px;
+	cursor: pointer;
+	text-align: center;
+}
+.label_9a/*publicacion_2_V.php*/{
+	background-color: rgba(4, 6, 82, 0.4);
+	cursor: inherit;
+}
+.label_10{/*nuevaP.php  nuevaP_1.php  publicacion_casa3_V.php*/
+	font-size:2em ;
+	position: fixed;
+	top: 10%;
+	left: 90%;
+	background-color: #040652;
+	color: white;
+	padding: 1%;
+	border-radius: 500px;
+	display: inline-block;
+}
+.label_11{/*publicacion_2_V.php */
+	margin: 0% 1% !important;
+	width: 150px;
+}
+.label_12{/*editarCasa_V.php*/
+	font-weight: bold;
+	display: block
+}
+.label_13{/*filtro.php*/
+	font-size: 2em;
+	display: block;
+	text-align: center;
+	margin-top: 2%;
+}
+.label_14{/*filtro.php*/
+	font-size: 1.3em;
+	font-weight: bold;
+}
+.label_15{/*filtro.php*/
+	margin: 0%!important;
+}
+.label_16{/*descripcion_habitacion_V.php*/
+	display: block;
+	font-weight: bold;
+	margin-top: 3%;
+	font-size: 1em;
+}
+.label_17{/*descripcion_habitacion_V.php*/
+	background-color: rgb(3, 3, 139);
+	color: white;
+	display: block;
+	font-size: 1.1em;
+	text-align: center;
+	padding: 0.8%;
+}
+.label_18{/*descripcion_habitacion_V.php*/
+	font-size: 0.9em;
+	margin-bottom: 1%;
+	display: inline-block;
+}
+.label_19{/*descripcion_habitacion_V.php*/
+	text-align: center;
+	display: block;
+	font-weight: bold;
+}
+.label_21{/*editarCasa_V.php*/
+	font-size: 1.5em;
+	font-weight: bold;
+	color: rgb(4, 6, 82) ;
+	line-height: 2.2em;
+}
+.label_22{/*editarCasa_V  .php*/
+	display: block;
+	margin-bottom: 5%;
+}
+.label_23{/*descripcion_habitacion_V.php*/
+	font-size: 1.5em;
+	font-weight: bold;
+	color: white;
+	line-height: 2.2em;
+}
+.label_26{/*entrada_V.php*/
+	color:#040652;
+	cursor: pointer;
+}
+.label_27{/*descripcion_habitacion_V.php*/
+	/* font-size: 1em;
+	font-weight: bold; */
+	color: white;
+	position: absolute;
+	top: 0.5%;
+	left: 90%;
+}
+.label_28{/*tarifas_Natural_V.php*/
+	width: 70%;
+}
+.label_29{/*descripcion_habitacion_V.php*/
+	position: absolute;
+	top: 1%;
+	left: 10px;
+	font-weight: bold;
+	border-width: 1px;
+	border-color: white;
+	border-style: solid;
+}
+.legend_1{/*datosPersonaes.php  nuevaP_Casa.php*/
+	font-size: 1.5em;
+	padding: 4%;
+}
+.li_1{/*header.php*/
+	display: none;
+}
+.menuLi_1:hover > ul{/*header.php   index.php*//*Se aplica un hover a un elemento seleccionando otro elemento distinto*/
+	display: block;
+	width: 180px !important;
+}
+.menuContenedor_2{/*header.php #040652 */
+	display: none;
+	position: absolute;
+	margin-left: 3%;
+	/* width: 15%; */
+	padding-top: 1%;
+}
+.menuLi_2{/*header.php*/
+	padding: 20px 10px !important;
+	text-align: left !important;
+	display: block;
+	width: 220px !important;
+}
+.menuResponsive{/*da formato a barra de menu y contiene todos los enlaces de la misma, solo a la del header*/
+	background-color: #040652 !important;
+	height: 10%;
+	width: 100%;
+	/* float: left; */
+	margin-bottom: 3%;
+	box-sizing: border-box;
+	display: flex;
+	justify-content: space-between;
+	font-family:verdana;
+	clear: right;
+}
+.menuResponsive ul{/*todas las paginas*/
+	background-color: #040652;
+	width: 100%;
+	margin:auto;
+	list-style: none;
+	padding-top: 5%;
+	padding-bottom: 0.8%;
+	display: flex; /*Organiza los elementos horizontalmente*/
+}
+.menuResponsive li{/*proposito*/
+	flex-grow: 1;/*distribuye proporcionalmente los elementos internos en el eje horizontal, es necesario que el elemento padre tenga la propiedad display con el valor flex*/
+}
+.mostrar_precio{/*filtro-V.php*/
+	overflow-x: auto !important; /*Habilita el scroll horizontal*/
+	width: 90% !important;
+	margin:auto
+}
+.p_2{/*registros_habitaciones_V.php*/
+	display: none;
+}
+.p_5{/*tarifas_V.php*/
+	font-size: 1.3em;
+	width: 60%;
+	margin: auto;
+	margin-top: 3%;
+	/* text-align: justify; */
+	line-height: 45px;
+}
+.p_5a{/*tarifas_Natural.php*/
+	text-align: center;
+}
+.p_5b{/*tarifas_V.php */
+	text-align: center;
+	margin-top: 8%;
+}
+.p_6{/*filtro_V.php*/
+	background-color: #040652;
+	color: white;
+	font-size: 1.5em;
+}
+.p_8{/*registrar_Pago.php   recibeCorreo.php   formasPago_V.php*/
+	color: #040652;
+	font-size: 1.4em;
+	text-align: center;
+}
+.p_9{/*footer.php*/
+	font-size: 0.8em;
+}
+.p_10{/*footer.php*/
+	font-size: 1em;
+}
+.p_11{/*tarifas_Constructoras_V.php*/
+	font-size: 1.3em;
+	width: 70%;
+	margin: auto;
+	margin-top: 3%;
+	text-align: justify;
+	line-height: 45px;
+}
+.p_13{/*formasPago_V.php*/
+	font-size: 1.1em;
+	text-align: center;
+} 
+.p_14{/*formasPago_V.php*/
+	color: #040652;
+	font-weight: bold;
+	margin-bottom: 3%;
+} 
+.parrafo_1{/*inicio.php*/
+    text-align: center;
+}
+.parrafo_2{/*publicar.php*/
+    text-align: center;
+	font-size: 1.6em;
+	font-family: 'Courier New', Courier, monospace;
+	font-weight: bold;
+	background-color: rgb(213, 214, 219);
+	width: 40%;
+	text-align: center;
+	margin: 2% auto;
+	padding: 2%;
+	border-radius: 20px;
+}
+.section_1{/*perfil.php*/
+	margin-top: 2%;
+}
+.select_1{/*nuevaP_Casa.php*/
+	width: 95% !important;
+	height: 28px;
+	margin-bottom: 3%;
+}
+.select_2{/*filtro_V.php*/
+	width: 250px !important;
+	height: 30px;
+	margin-bottom: 3%;
+	font-size: 1.2em;
+}
+.select_3{/*editarCasa_V.php*/
+	width: 220px !important;
+	height: 30px;
+	margin-bottom: 3%;
+	display: block;
+}
+.span_1{/*principal.php*/
+	font-family: Caveat !important;
+    font-size: 1.5em;
+    font-weight: bold;
+}
+.span_2{/*inicio.php    formasPago_V*/
+	display: block;
+	text-align: center;
+}
+.sup_1{/*nuevaP_Casa.php*/
+	font-size: 0.6em ;
+	font-weight: bold;
+}
+.table_1{/*perfil_1*/
+	width:100%;
+}
+.table_2{/*registros_habitaciones_V.php   entrada_V.php*/
+	width:100%;
+	margin-top: 3%;
+	border-collapse: collapse;
+}
+.td_3{/*entrada_V.php*/
+	text-align: center;
+}
+.th_1{/*entrada_V.php*/
+	font-size: 1.em;
+	padding: 0.5%;
+	width: 8%;
+}
+.th_2{/*entrada_V.php*/
+	text-align: left;
+	width: 12%;
+}
+.th_3{/*entrada_V.php*/
+	text-align: left;
+	width: 16%;
+}
+.th_4{/*entrada_V.php*/ 
+	text-align: left;
+}
+.th_5{/*entrada_V.php*/
+	font-size: 1.em;
+	width: 7%;
+	text-align: left;
+}
+.th_6{/*entrada_V.php*/ 
+	width: 10%;
+}
+.thead_2{/*entrada_V.php*/
+	background-color: rgb(153, 154, 214);
+	/* position: fixed; */
+	/* width: 100%; */
+	text-align: left;
+}
+.tr_5{/*entrada_V.php*/
+	height:80px ;
+}
+.ul_1{/*descripcion_habitacion_V.php*/
+	display: flex; /*Organiza los elementos horizontalmente*/  
+	z-index: 6;   
+}
