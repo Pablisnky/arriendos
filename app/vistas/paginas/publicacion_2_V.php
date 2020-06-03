@@ -16,7 +16,7 @@
         // Debido a que se va a enviar un aray como parametro en la url 
         $Datos_3= serialize($Datos);
         $Datos_3= urlencode($Datos_3);
-        echo $Datos_3;
+        // echo $Datos_3;
 ?>
         <div class="contenedor_21" id="Contenedor_21">
                 <p class="p_8">Tipo de inmueble a <?php print_r($Datos[0]);?>.</p><!--$Datos[0] es recibido desde RegistrarPago_C/seleccionInmueble-->

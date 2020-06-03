@@ -3,85 +3,51 @@
 
     class Login_C extends Controlador{
         public function __construct(){
-            // echo "Se ha cargado el controlador \"Login_C\"";
+            //Se accede al servidor de base de datos
+            //Se solicita informacion a la BD, se llama al metodo modelo de la clase Controlador, que devuelve una instacia del objeto 
+            $this->ConsultaLogin_M = $this->modelo("Login_M");
+        }
 
+        //Siempre cargara este metodo por defecto, solo sino se solicita otra metodo
+        public function index(){
             //Se verifica si el usuario esta memorizado en las cookie de su computadora y las compara con la BD, para recuperar sus datos y autorellenar el formulario de inicio de sesion, las cookies de registro de usuario se crearon en validarSesion.php
             if(isset($_COOKIE["id_usuario"]) AND isset($_COOKIE["clave"])){//Si la variable $_COOKIE esta establecida o creada
-                $Cookie_usuario = $_COOKIE["id_usuario"];
-                $Cookie_clave = $_COOKIE["clave"];
-                // echo "Cookie afiliado =" . $Cookie_usuario ."<br>";
-                // echo "Cookie clave =" .  $Cookie_clave ."<br>";
+                // echo "Cookie afiliado =" . $_COOKIE["id_usuario"] ."<br>";
+                // echo "Cookie clave =" .  $_COOKIE["clave"] ."<br>";
                 
-                //se entra aqui para recuperar el correo del usuario y autorellenar el formulario
-                if($_COOKIE["id_usuario"]!="" || $_COOKIE["clave"]!=""){
-
-                    //Se accede al servidor de base de datos
-                    //Se solicita informacion a la BD, se llama al metodo modelo de la clase Controlador, que devuelve una instacia del objeto 
-                    $this->usuarioRecordado = $this->modelo("Login_M");
-            
-                    //Se obtienen el usuario registrados en el sistema con el correo dado como argumento
-                    $usuarioRec= $this->usuarioRecordado->consultarUsuarioRecordado($Cookie_usuario);
-                    $Datos=[
-                        "usuarioRecord"=>$usuarioRec,
-                    ];
-
-                    // print_r($usuarioRec);
+                $Cookie_usuario = $_COOKIE["id_usuario"];
+                            
+                //Se CONSULTA el usuario registrados en el sistema con el correo dado como argumento
+                $usuarioRec= $this->ConsultaLogin_M->consultarUsuarioRecordado($Cookie_usuario);
+                $Datos=[
+                    "usuarioRecord"=>$usuarioRec,
+                ];
                     
-                    foreach($Datos["usuarioRecord"] as $usuarioRec){
-                        $Correo= $usuarioRec->correo;
-                        // echo "Correo correspondiente a la cookie: " . $Correo  . "<br>"; 
-                    } 
-                    
-                    //Se entra al formulario de sesion que esta rellenado con los datos del usuario
-                    $this->vista("paginas/login_Vrecord", $Datos);
-                    exit();
-                }	
+                //Se entra al formulario de sesion que esta rellenado con los datos del usuario
+                $this->vista("paginas/login_Vrecord", $Datos);
             }
             else{
-                //  echo "El usuario no ha guardado cookies" ."<br>";
+                //Se carga la vista login_V
+                $this->vista("paginas/login_V");
             }
         }
 
-        // *************************************************************************************
-
-        //Siempre cargara el metodo por defecto correspondiente a este controlador sino se pasa un metodo especifico
-        public function index(){
-            //Se verifica en BD el usuario y contraseña
-            // $usuarios= $this->usuarioRecordado->consultarAfiliados();
-            // $Datos=[
-            //     "usuarios"=>$usuarios,
-            // ];
-
-            // echo "Carga la vista por defecto: login_V"  . "<br>";
-            $this->vista("paginas/login_V");
-        }
-
-        // ***************************************************************************************
-
         public function ValidarSesion(){
-            // echo "Carga el metodo ValidarSesion";
-            $Recordar= isset($_POST["recordar"]) == 1 ? $_POST["recordar"] : "No desea recordar";
-            $Clave= $_POST["clave_Arr"];
-            $Correo= $_POST["correo_Arr"];
+            $Recordar = isset($_POST["recordar"]) == 1 ? $_POST["recordar"] : "No desea recordar";
+            $Clave = $_POST["clave_Arr"];
+            $Correo = $_POST["correo_Arr"];
             // echo "La clave es: " . $Clave . "<br>";
             // echo "El correo es: " . $Correo . "<br>";
             // echo "Desea recordar: " . $Recordar . "<br>";
-            
-            //Se accede al servidor de base de datos
-            //Se solicita informacion a la BD, se llama al metodo modelo de la clase Controlador, que devuelve una instacia del objeto 
-            $this->usuarioM = $this->modelo("Login_M");
-            
-            //Se consulta el usuario registrados en el sistema con el correo dado como argumento
-            $usuarios= $this->usuarioM->consultarAfiliados($Correo);
+                        
+            //Se CONSULTA el usuario registrados en el sistema con el correo dado como argumento
+            $usuarios = $this->ConsultaLogin_M->consultarAfiliados($Correo);
             $Datos=[
                 "usuarios"=>$usuarios,
             ];
-
-            // print_r($usuarios);
-            // echo "<br>";
             
             foreach($Datos["usuarios"] as  $usuario){
-                $ID_Afiliado= $usuario->ID_Afiliado;
+                $ID_Afiliado = $usuario->ID_Afiliado;
                 // echo "ID_Afiliado: " . $ID_Afiliado  . "<br>"; 
             } 
         
@@ -102,7 +68,7 @@
                 // echo "La cookie ID_Usuario = " . $_COOKIE["id_usuario"] . "<br>";
                 // echo "La cookie clave = " . $_COOKIE["clave"] . "<br>"; 
                 
-                //4) Se introduce la marca aleatoria en el registro correspondiente al usuario
+                //4) Se ACTUALIZA la marca aleatoria en el registro correspondiente al usuario
                 //  $Actualizar="UPDATE afiliado SET aleatorio='$Aleatorio' WHERE ID_Afiliado='$ID_Afiliado'";
                 //  mysqli_query($conexion, $Actualizar);
             }
@@ -119,10 +85,10 @@
                 // echo "Clave recibida: " . $Clave . "<br>";
         
                 //Se solicita informacion a la BD, se llama al metodo modelo de la clase Controlador, que devuelve una instacia del objeto 
-                $this->usuarioM = $this->modelo("Login_M");
+                $this->ConsultaLogin_M = $this->modelo("Login_M");
 
-                //Se consulta la contraseña enviada, que sea igual a la contraseña de la BD
-                $usuarios_2= $this->usuarioM->consultarContraseña($ID_Afiliado);
+                //Se CONSULTA la contraseña enviada, que sea igual a la contraseña de la BD
+                $usuarios_2= $this->ConsultaLogin_M->consultarContraseña($ID_Afiliado);
                 $Datos_2=[
                     "usuarios_2"=>$usuarios_2,
                 ];
@@ -157,6 +123,35 @@
                         <?php 
                 }    
             }   
+        }
+        
+        public function RecuperarClave(){
+            $Correo= $_POST["correo"];
+            //echo "Correo= " . $Correo . "<br>";
+        
+            //Generamos un numero aleatorio que será el código de recuperación de contraseña
+            //alimentamos el generador de aleatorios
+            mt_srand (time());
+            // //generamos un número aleatorio
+            $Aleatorio = mt_rand(100000,999999);
+            // echo "Nº aleatorio= " . $Aleatorio . "<br>"; 
+                    
+            //Se INSERTA el código aleatorio en la tabla "codigo-recuperacion y se asocia al correo del usuario
+            $this->ConsultaLogin_M->insertarCodigoAleatorio($Correo, $Aleatorio);
+            
+            //Se envia correo al usuario informandole el código que debe insertar para verificar
+            $email_to = $Correo;
+            $email_subject = "Recuperación de contraseña";  
+            $email_message ="Código de recuperación de contraseña: " . $Aleatorio;
+            $headers = 'From: '. "admin@horebi.com" ."\r\n".
+        
+            'Reply-To: '. "admin@horebi.com"."\r\n" .        
+            'X-Mailer: PHP/' . phpversion();
+        
+            @mail($email_to, $email_subject, $email_message, $headers);
+            
+            //Se redirecciona, la función redireccionar se encuentra en url_helper.php
+            redireccionar("/RecuperarClave_C/index/$Correo"); 
         }
     }
 ?>    

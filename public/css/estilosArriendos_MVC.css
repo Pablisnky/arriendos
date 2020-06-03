@@ -167,9 +167,15 @@ input[type=radio]{/*nuevaP_Casas.php*/
 	text-align: center;
 	width: 18%;
 }
-.fieldset_4{/*editarCasa_V.php   datosPersoanles.php   nuevaP_Casa.php*/
+.fieldset_3{/*login_V.php*/
     padding: 5%;
     width: 90%;
+    border-radius: 15px;
+	margin: 5% auto;
+}
+.fieldset_4{/*cambiarClave_V.php  registro_V.php  editarCasa_V.php*/
+    padding: 5%;
+    width: 50%;
     border-radius: 15px;
 	margin: 5% auto;
 }
@@ -217,19 +223,23 @@ input[type=radio]{/*nuevaP_Casas.php*/
 	width: 100%;
 	top: 0%;
 }
-.contenedor_11{/*inicio.php*/
-    width: 35%;
+.contenedor_11{/*login_V.php*/
+    width: 40%;
     margin: auto;
 }
-.contenedor_12{/*inicio.php*/
+.contenedor_12{/*login_V.php*/
     border-radius: 15px;
-    margin: 15% auto;
+	margin: 15% auto;
+	width: 90%;
 }
-.contenedor_13{/*inicio.php*/
+.contenedor_13{/*login_V.php    login_Vrecord.php*/
 	text-align: center;
 	margin-bottom: 10%;
 }
-.contenedor_16{/*inicio.php */
+.contenedor_14{/*login_Vrecord.php*/
+	margin-top: 5%;
+}
+.contenedor_16{/*login_V.php */
 	background-color: rgba(0,0,0,0.8);
 	width: 100%;
 	height: 100vh;
@@ -251,11 +261,14 @@ input[type=radio]{/*nuevaP_Casas.php*/
 	width: 30%; 
 	margin-left: 2%;
 }
-.contenedor_19{/*perfil.php*/
-	float: right; 
-	width: 67%; 
-	margin-right: 1%;
-	margin-top: 2%;
+.contenedor_19{/*recuperarClave_V.php   cambiarClave.php*/
+	width: 67%;
+	margin: 2% Auto;
+	min-height: 60%;
+}
+.contenedor_19a{/* cambiarClave.php*/
+	width: 37%;
+	margin-top: 5%;
 }
 .contenedor_20{/*nuevaP.php  publicacion_V.php*/
 	width: 70%;
@@ -286,15 +299,13 @@ input[type=radio]{/*nuevaP_Casas.php*/
 .contenedor_21b{/*publicacion_2_V.php*/
 	display: none;
 }
-.contenedor_22{/*publicacion_casa3_V.php*/
-	width: 40%;
+.contenedor_22{/**/
+	/* width: 40%;
 	margin-top: 7%;
-	margin-left: 10%;
+	margin-left: 10%; */
 }
-.contenedor_23{/*editarCasa_V.php*/
-	/* display: grid;
-	grid-template-columns: 22% 22% 22%  22%; */
-	width: 40%;
+.contenedor_23{/*editarCasa_V.php   publicacion_casa3_V.php*/
+	width: 80%;
 	margin-left: 5%;
 }
 .contenedor_24{/*editarCasa_V.php*/
@@ -468,6 +479,10 @@ input[type=radio]{/*nuevaP_Casas.php*/
 	margin-top: 7%;
 	text-align: center;
 }
+.contenedor_67{/*editarCasa_V.php*/
+	display: flex;
+	justify-content: space-around;
+}
 .enlace_2{/*header.php*/
 	color: white;
 	font-size: 1.3em !important;
@@ -496,11 +511,16 @@ input[type=radio]{/*nuevaP_Casas.php*/
 	margin: auto;
 	border-radius: 15px;
 }
-.fieldset_4{/*inicio.php   datosPersoanles.php   nuevaP_Casa.php*/
-    padding: 5%;
-    width: 90%;
+.fieldset_4{/*inicio.php   datosPersoanles.php   nuevaP_Casa.php  editarCasa_V.php*/
+    padding: 3%;
+    width: 50%;
     border-radius: 15px;
-	margin: 5% auto;
+	margin-top: 5% ;
+	margin-left: 2%;
+}
+.fieldset_5{/*editarCasa_V.php*/
+    width: 70% ;
+    padding: 1%;
 }
 .generic_1{/*entrada_V.php*/
 	margin-right: 20px;
@@ -542,6 +562,13 @@ input[type=radio]{/*nuevaP_Casas.php*/
 	width:100px;
 	height: 100px;
 	margin-right: 5%;
+}
+.imagen_5{/*editarCasa_V.php*/
+	width:100px;
+	height: 100px;
+	border-width: 1px;
+	border-color: #040652;
+	border-style: solid;
 }
 .imagen_6{/*footer.php*/
 	max-width:6%;
@@ -634,7 +661,10 @@ input[type=radio]{/*nuevaP_Casas.php*/
 	font-size: 1.2em;
 	color: #040652;
 }
-.input_6{/*registrar_Pago_V.php    recibeCorreo.php*/
+.input_5{/*publicacion_casa3_V.php*/
+	margin: auto ;
+}
+.input_6{/*registrar_Pago_V.php    recuperarClave_V.php*/
 	margin: auto ;
 	display: block;
 	margin-top: 5%;
@@ -646,17 +676,20 @@ input[type=radio]{/*nuevaP_Casas.php*/
 	top: 75%;
 	left: 70%;
 	width: 10% !important;
+	z-index: 2;
 }
-.label_1{/*inicio.php nuevaP_Casa.php*/
-    margin:5% auto;
+.input_9{/*recuperarClave_V.php*/
+	margin-top: 15%;
+}
+.label_1{/*editarCasa_V.php   login_V.php   login_Vrecord.php*/
+    margin:10% auto 2% auto;
     display: block;
     text-align: center;
-    width: 40%;
+    width: 20%;
     background-color:rgb(4, 6, 82);
     border-radius: 15px;
     padding: 1.5%;
     color: white;
-    font-weight: bold;
     border-color: black;
     border-style: solid;
     border-width: 1px;
@@ -681,9 +714,10 @@ input[type=radio]{/*nuevaP_Casas.php*/
 	text-align: center;
 	margin-top: 3%;
 }
-.label_4{/*entrada.php*/
-    width: 70% !important;
-    background-color:  rgb(183, 149, 11);
+.label_4{/*login_V.php   login_Vrecord.php*/
+	width: 70% !important;
+	display: block;
+	margin-top:10%!important;
 }
 .label_5{/*publicar.php*/
 	font-size: 1.6em;
@@ -798,6 +832,13 @@ input[type=radio]{/*nuevaP_Casas.php*/
 	display: block;
 	font-weight: bold;
 }
+.label_20{/*editarCasa_V.php*/
+	display: block;
+	text-align: center;
+	width: 100%;
+	margin: auto;
+	cursor: pointer;
+}
 .label_21{/*editarCasa_V.php*/
 	font-size: 1.5em;
 	font-weight: bold;
@@ -905,7 +946,7 @@ input[type=radio]{/*nuevaP_Casas.php*/
 .p_5a{/*tarifas_Natural.php*/
 	text-align: center;
 }
-.p_5b{/*tarifas_V.php */
+.p_5b{/*tarifas_V.php   recuperarClave_V.php */
 	text-align: center;
 	margin-top: 8%;
 }
@@ -914,8 +955,7 @@ input[type=radio]{/*nuevaP_Casas.php*/
 	color: white;
 	font-size: 1.5em;
 }
-.p_8{/*registrar_Pago.php   recibeCorreo.php   formasPago_V.php*/
-	color: #040652;
+.p_8{/*recuperarClave_V.php    formasPago_V.php*/
 	font-size: 1.4em;
 	text-align: center;
 }

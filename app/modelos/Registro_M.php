@@ -9,7 +9,7 @@
 
         public function insertarUsuario($RecibeDatos){
             //Se inserta a la BD por medio de sentencias preparadas
-            $this->db->Insertar("INSERT INTO afiliado(nombre, apellido, cedula, telefono, correo, fecha_afiliacion) VALUES (:Nombre, :Apellido, :Cedula, :Telefono, :Correo, NOW()) ");
+            $this->db->Insertar("INSERT INTO afiliado(nombre, apellido, cedula, telefono, correo, fecha_afiliacion) VALUES (:Nombre, :Apellido, :Cedula, :Telefono, :Correo, NOW())");
 
             //Se vinculan los valores de las sentencias preparadas
             $this->db->bind(':Nombre' , $RecibeDatos['Nombre']);
@@ -28,7 +28,7 @@
         }      
 
         public function consultarUsuario($Cedula){         
-            // //Se consulta en la tabla afiliado el ID_Afiliado del afiliado que se esta registrando
+            //Se consulta en la tabla afiliado el ID_Afiliado del afiliado que se esta registrando
             $this->db->Consulta("SELECT ID_Afiliado FROM afiliado WHERE cedula ='$Cedula'");
 
             //registros() es un metodo de la clase Conexion_BD
@@ -42,7 +42,7 @@
             //Se traen los datos obtenidos en la consulta consultarUsuario
             foreach($Datos["ID_Afiliado"] as $ID_Afiliado){
                 $NombreAfiliado = $ID_Afiliado -> ID_Afiliado;
-                  echo "ID_Afiliad: " . $NombreAfiliado  . "<br>"; 
+                echo "ID_Afiliado: " . $NombreAfiliado  . "<br>"; 
             } 
 
             //Se vinculan los valores de las sentencias preparadas

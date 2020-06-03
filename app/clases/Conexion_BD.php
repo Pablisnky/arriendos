@@ -15,8 +15,7 @@
             $Opciones= array(
                             PDO::ATTR_PERSISTENT => true,
                             //Se recuperan los errores que se producen
-                            PDO::ATTR_ERRMODE => PDO::ERRMODE_WARNING
-                                                      //ERRMODE_EXCEPTION   usar en remoto
+                            PDO::ATTR_ERRMODE => PDO::ERRMODE_WARNING //ERRMODE_EXCEPTION   usar en remoto
                        );
             //Se crea una instancia de PDO
             try{
@@ -34,19 +33,24 @@
         
         public function Consulta($sql){
             //se prepara la consulta por medio de prepare() que es un metodo PDO y devuel el objeto mysqli_stmt
-            $this->stmt=$this->dbh->prepare($sql);
+            $this->stmt = $this->dbh->prepare($sql);
         }
         
         public function Insertar($sql){
             //se prepara la consulta por medio de prepare() que es un metodo PDO 
-            $this->stmt=$this->dbh->prepare($sql);
+            $this->stmt = $this->dbh->prepare($sql);
         }
 
         public function Elimina($sql){
             //se prepara la consulta por medio de prepare() que es un metodo PDO 
-            $this->stmt=$this->dbh->prepare($sql);
+            $this->stmt = $this->dbh->prepare($sql);
         }
-        
+
+        // public function Contar($sql){
+        //     //se prepara la consulta por medio de prepare() que es un metodo PDO 
+        //     $this->stmt = $this->dbh->prepare($sql);
+        // }
+
         //Se vincula la consulta preparada arriba, devuelve true o false dependiendo si tiene o no tiene exito
         public function bind($Parametro, $Valor, $Tipo=null){
             if(is_null($Tipo)){
@@ -90,8 +94,10 @@
         }
 
         //Se obtiene la cantidad de filas de la consulta con el metodo nativo rowCount
-        public function rowCount(){
+        public function ContarRegistros(){
+            $this->execute();
             return $this->stmt->rowCount();
         }
     }
 ?>
+

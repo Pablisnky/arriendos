@@ -1,5 +1,6 @@
 <?php
-    $ID_Afiliado= $_SESSION["ID_Afiliado"];
+//Esta vista la car el controlador Entrada_C/editarRegistro
+    // $ID_Afiliado= $_SESSION["ID_Afiliado"];
     // echo $ID_Afiliado . "<br>";
 
     //Se verifica si se realizó login para entrar en este  archivo
@@ -8,24 +9,25 @@
     //Administra los errores del sistema e impide mostrarlos en remoto
     // include("../../../modulos/muestraError.php");
 
-    // Se reciben datos desde Enrada_C/editarRegistro
+    // Se reciben datos desde Entrada_C/editarRegistro
     foreach($Datos["datosInmueble"] as $DatosInmueble) : 
         $Descripcion_1= $DatosInmueble->tipo_negociacion;
         $Descripcion_2= $DatosInmueble->tipo_inmueble;
     endforeach;   
     
-    // // Se cambia la expresion(solo para presentar en pantalla)
+    //Se cambia la expresion(solo para presentar en pantalla)
     switch($Descripcion_1){
-        case "Arrenda":
+        case "arrendar":
             $Descripcion_1 = "arriendo";
         break;
-    }
+    } 
     switch($Descripcion_2){
         case "Casas":
             $Descripcion_2 = "Casa";
         break;
     }
-?><!DOCTYPE html>
+?>
+<!DOCTYPE html>
 <html lang="es">
     <head>
         <title><?php echo NOMBRESITIO;?></title>
@@ -45,7 +47,7 @@
     // if(isset($_SESSION["ID_Afiliado"])){ 
         // require(RUTA_APP . "/vistas/inc/header.php");
         
-        //Se traen los datos obtenidos en la consulta; Recibe $Datos desde Entrada_C/editarRegistro
+        //Se traen los datos obtenidos en la consulta; Recibe $Datos desde Entrada_C/editarRegistro o desde RecibeEditar_C/index
         foreach($Datos["Nombre"] as $NombreAfiliado){} 
         ?>
 
@@ -53,7 +55,7 @@
             <a class="a_2" href="<?php echo RUTA_URL . '/Entrada_C';?>">Mis publicaciones</a>
             <a class="a_2" href="<?php echo RUTA_URL . '/Publicacion_C';?>">Nueva publicación</a>
             <a class="a_2" href="<?php echo RUTA_URL . '/CerrarS_C';?>">Cerrar sesión</a>
-            <input class="input_2" type="text" value="<?php echo $NombreAfiliado->nombre?>" readonly>
+            <input class="input_2" type="text" value="<?php echo $NombreAfiliado->nombre?>" readonly> 
         </div>
         <div> 
             <div class="contenedor_36">
@@ -234,15 +236,19 @@
                             </fieldset>
                         </div>
                         <div id="marcador_05">                    
-                            <fieldset class="fieldset_4">
+                            <fieldset class="fieldset_4 fieldset_5">
                                 <legend class="legend_1">Imagenes</legend>
                                 <label class="label_22">Actualice con imagenes no mayor de 700 Kb</label>
                                 <!-- Se muestran las imagenes que estan en BD -->                    
-                                <div class="contenedor_24">
+                                <div class="contenedor_24 contenedor_67">
                                     <?php                                     
                                     //Se traen los datos de la consulta de fotografias del inmueble
                                         foreach($Datos["fotografias"] as $FotografiasInm){  ?>
-                                            <img class="imagen_4" src="<?php echo RUTA_URL?>/images/<?php echo $FotografiasInm->nombre_img;?>" alt="Foto">    
+                                            <div>
+                                            <img class="imagen_5" src="<?php echo RUTA_URL?>/images/<?php echo $FotografiasInm->nombre_img;?>" alt="Foto"> 
+                                            
+                                            <a class="label_20" href="<?php echo RUTA_URL?>/Entrada_C/eliminarImagen/<?php echo $FotografiasInm->ID_Imagen;?>" onclick="return Confirmacion()">Eiminar</a>
+                                    </div>  
                                             <?php
                                         }           
                                     ?>  
@@ -264,7 +270,7 @@
                             <a class="a_6" href="#marcador_04">Precio</a><br>
                             <a class="a_6" href="#marcador_05">Imagenes</a><br>
                         </div>    
-                        <input type="text" name="ID_Inmueble" value="<?php echo $ID_Inmueble;?>" hidden>
+                        <input type="text" name="ID_Inmueble" value="<?php echo $Datos["ID_Inmueble"];?>" hidden>
                         <input class="input_7" type="submit" value="Guardar" onclick="this.disabled=true; this.value='Enviando...'"> 
                         <?php 
                     endforeach  ?>
@@ -277,7 +283,7 @@
     </body>
 </html>
 
-<!-- Función que da una vista previa de la fotografia antes de guardarla en la B -->
+<!-- Función que da una vista previa de la fotografia antes de guardarla en la BD -->
 <script>
     function muestraImg(){
         var contenedor = document.getElementById("muestrasImg");

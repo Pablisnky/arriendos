@@ -6,4 +6,7 @@
 	RewriteCond %{REQUEST_FILENAME} !-d
 	RewriteCond %{REQUEST_FILENAME} !-f
 	RewriteRule ^(.+)$ index.php?url=$1 [QSA,L]
+
+	#Solo permite escribir los siguientes caracteres en la url
+	#RewriteRule ^([a-zA-Z0-9/_]+)$
 </IfModule>

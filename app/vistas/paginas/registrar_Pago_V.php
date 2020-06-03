@@ -8,7 +8,6 @@
     //Se llama la sesion  el Nombre creada en Login_C.php
     $nombre= $_SESSION["Nombre"];
 
-
     // Se carga el header 
     require(RUTA_APP . "/vistas/inc/headerLogin.php");
         
@@ -27,9 +26,10 @@
             }   
             else{   ?>
                 <div class="contenedor_40">
-                    <?php echo gettype($Datos) . "<br>"?>
-                    <?php print_r($Datos);
-                    echo  "<br>";
+                    <?php 
+                    // echo gettype($Datos) . "<br>";
+                    // print_r($Datos);
+                    // echo  "<br>";
 
                     // Debido a que se va a enviar un aray como parametro en la url 
                     $Datos_2= serialize($Datos);

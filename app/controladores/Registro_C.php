@@ -1,8 +1,7 @@
 <?php
     class Registro_C extends Controlador{
         public function __construct(){            
-            //Se accede al servidor de base de datos
-            //Se instancia un objeto correspondiente que se comunica con la BD 
+            //Se accede al servidor de base de datos; Se instancia un objeto correspondiente que se comunica con la BD 
             $this->obtenerRegistros = $this->modelo("Registro_M");           
         }
         
@@ -30,14 +29,14 @@
             //  print_r($RecibeDatos);
             //  echo "<br>";
 
-            //Se insertan los datos en la BD
+            //Se INSERTAN los datos en la BD
             $this->obtenerRegistros->insertarUsuario($RecibeDatos);
 
             //se cifran la contraseña con un algoritmo de encriptación
             $ClaveCifrada= password_hash($RecibeDatos["Clave"], PASSWORD_DEFAULT);
             // echo "La clave cifrada: " . $ClaveCifrada . "<br>";
 
-            //Se consulta el ID_Afiliado del participante registrados en el sistema con el Cedula dado como argumento
+            //Se CONSULTA el ID_Afiliado del participante registrados en el sistema con la Cedula dado como argumento
             $ID_Afiliado= $this->obtenerRegistros->consultarUsuario($RecibeDatos['Cedula']);
             $Datos=[
                 "ID_Afiliado" => $ID_Afiliado,
@@ -45,11 +44,10 @@
             // print_r($ID_Afiliado);
             // echo "<br>";
 
-            //Se inserta el ID_Afiliado en la tabla usuario para almacenar la contraseña.
+            //Se INSERTA el ID_Afiliado en la tabla usuario para almacenar la contraseña.
             $this->obtenerRegistros->insertarClaveUsuario($Datos, $ClaveCifrada);
 
-            //Redirecciona 
-            //La función redireccionar se encuantra en url_helper.php
+            //Redirecciona, La función redireccionar se encuantra en url_helper.php
             redireccionar("/Login_C/");
         }
     }

@@ -1,15 +1,18 @@
 <?php
+session_start(); 
     class RecibeEditar_C extends Controlador{
         public function __construct(){            
             //Se accede al servidor de base de datos
             //Se instancia un objeto correspondiente que se comunica con la BD 
-            $this->obtenerRegistros = $this->modelo("Registro_M");           
+            $this->ConsultaRecibeEditar_M = $this->modelo("RecibeEditar_M");            
         }
         
+        //Captura todos los campos del formulario, se recibe desde editarCasa_V.php
         //Siempre cargara el metodo por defecto sino se pasa un metodo especifico
         public function index(){          
-            //Captura todos los campos del formulario, se recibe desde editarCasa_V.php
             if($_SERVER["REQUEST_METHOD"] == "POST"){//si son enviados por POST, entra aqui
+                $ID_Inmueble = $_POST["ID_Inmueble"];
+                // echo "ID_Inmueble: " . $ID_Inmueble;
                 $RecibeDatos = [
                     'DEPARTAMENTO' => $_POST["departamento"], 
                     'MUNICIPIO' => $_POST["municipio_Col"],
@@ -28,89 +31,72 @@
                     'PRECIO' => $_POST["precio"],
                 ];
                 
-                //SECCION GALERIA DE FOTOFRAGIAS
-                foreach($_FILES["imagen_inmueble"]['tmp_name'] as $key => $tmp_name){
-                    
-                    // Se consulta en la BD el ID_Inmueble recien ingresado para vincular sus imagenes
-                    // $Consulta=  $conexion->query("SELECT ID_Inmueble FROM inmueble WHERE aleatorio = '$AleatorioPago'") or die($conexion->error);
-                    // $registros= mysqli_fetch_array($Consulta);
-                    // $ID_Inmueble = $registros['ID_Inmueble'];
-                    // echo "ID_Inmueble: " . $ID_Inmueble . "<br>";
+                //Se ACTUALIZAN los datos en la BD
+                $this->ConsultaRecibeEditar_M->actualizarInmueble($ID_Inmueble, $RecibeDatos);
                 
+                // //Se hace una petición al modelo para consultar los datos del inmueble
+                // $DatosInm= $this->nombre_M->consultarInmueble($ID_Inmueble); 
+                
+                // //sesion creada en Login_C.php
+                // $ID_Afiliado = $_SESSION["ID_Afiliado"];
+
+                // //Se hace una petición al modelo para consultar el nombre del usuario
+                // $NombreAfiliado= $this->nombre_M->consultarUsuario($ID_Afiliado);
+            
+                // $Datos=[
+                //     "Nombre" => $NombreAfiliado,
+                //     "datosInmueble" => $DatosInm,
+                // ]; 
+                
+                //SECCION GALERIA DE FOTOFRAGIAS
+                foreach($_FILES["imagen_inmueble"]['tmp_name'] as $key => $tmp_name){                
                     // Nombres de archivos de temporales
-                    $archivonombre = $_FILES["imagen_inmueble"]["name"][$key];
+                    $Archivonombre = $_FILES["imagen_inmueble"]["name"][$key];
                     $tmp_name = $_FILES["imagen_inmueble"]["tmp_name"][$key];
-                    $tipo = $_FILES['imagen_inmueble']['type'][$key];
-                    $tamanio = $_FILES['imagen_inmueble']['size'][$key];
-                    
-                    var_dump($archivonombre);
-                    echo "<br>";
-                    var_dump($tmp_name);
-                    echo "<br>";
-                    var_dump($tipo);
-                    echo "<br>";
-                    var_dump($tamanio);
-                    echo "<br>";
-    
+                    $Tipo = $_FILES['imagen_inmueble']['type'][$key];
+                    $Tamanio = $_FILES['imagen_inmueble']['size'][$key];
+                       
                     //Declaramos el nombre de la carpeta que guardara los archivos
                     // En local
-                    $carpeta = $_SERVER['DOCUMENT_ROOT'] . '/proyectos/Arriendo/Arriendo_MVC/public/images/';
+                    $Carpeta = $_SERVER['DOCUMENT_ROOT'] . '/proyectos/Arriendo/Arriendo_MVC/public/images/';
 
                     // En remoto
                     // $carpeta = $_SERVER['DOCUMENT_ROOT'] . '/images/';
-                    // if(!file_exists($carpeta)){
-                    // mkdir($carpeta, 0777) or die("Hubo un error al crear el directorio de almacenamiento");
-                    // }
-    
-                    // $dir=opendir($carpeta);
-                    $target_path = $carpeta . $archivonombre; //indicamos la ruta de destino de los archivos
-                    echo $target_path . "<br>"; 
 
-                    if(move_uploaded_file($tmp_name, $target_path)){
-                        echo "El archivo $archivonombre se ha cargado de forma    correcta" . "<br>";
+                    $Target_path = $Carpeta . $Archivonombre; //indicamos la ruta de destino de los archivos
+                    echo $Target_path . "<br>"; 
+
+                    if(move_uploaded_file($tmp_name, $Target_path)){
+                        echo "El archivo $Archivonombre se ha cargado de forma    correcta" . "<br>";
                     }
                     else{
                         echo "Se ha producido un error, por favor revise los archivos e intentelo de nuevo" . "<br>";
                     }
                     // closedir($dir); //Cerramos la conexion con la carpeta destino
-    
-                    // echo "<br>";                    
-                    // echo "<br>";
-                    //Se introducen las imagenes en la base de datos
-                    // $Insertar = "INSERT INTO imagenes(ID_Afiliado,ID_Inmueble,nombre_img,tipoArchivo,tamanoArchivo,fecha)VALUES('$ID_Afiliado','$ID_Inmueble','$archivonombre','$tipo','$tamaño',NOW())";
-                    // mysqli_query($conexion, $Insertar);
-                                   
-                    // $Actualizar_2= "UPDATE imagenes SET ID_Afiliado = '$ID_Afiliado', ID_Inmueble = '$ID_Inmueble', nombre = '$Inmueble_nombre', tipoArchivo = '$Inmueble_tipo', tamanoArchivo = '$Inmueble_tamaño'";
-                        // }
-                        // else{
-                        //     //si no cumple con el formato
-                        //     echo "Solo puede cargar imagenes con formato jpg, jpeg, png o gif";
-                        // }
-                    // } 
-                    // else{
-                    //     //si existe la variable pero se pasa del tamaño permitido
-                    //     if($Inmueble_nombre == !NULL) echo "La imagen es demasiado grande"; 
-                    // }
-                }
+                        
+                    //Se ACTUALIZAN las fotografias en la BD, solo si se ha presionado el boton de buscar fotografia
+                    if(($_FILES['imagen_inmueble']['name'])[$key] != ""){
+                        $this->ConsultaRecibeEditar_M->actualizarImagenes($ID_Inmueble, $Archivonombre, $Tipo, $Tamanio);
+                    }
+                }                        
+                //Redirecciona 
+                //La función redireccionar se encuantra en url_helper.php
+                redireccionar("/Entrada_C/");
             }
             
-            print_r($RecibeDatos);
-
-            //Carga la vista 
-            // $this->vista("paginas/registro_V");
         }
    
         public function edicionCasa(){  
             //  echo "<br>";
 
-            //Se insertan los datos en la BD
+            //Se INSERTAN los datos en la BD
             // $this->obtenerRegistros->insertarUsuario($RecibeDatos);
 
             //se cifran la contraseña con un algoritmo de encriptación
             // $ClaveCifrada= password_hash($RecibeDatos["Clave"], PASSWORD_DEFAULT);
             // echo "La clave cifrada: " . $ClaveCifrada . "<br>";
 
-            //Se consulta el ID_Afiliado del participante registrados en el sistema con el Cedula dado como argumento
+            //Se CONSULTA el ID_Afiliado del participante registrados en el sistema con el Cedula dado como argumento
             // $ID_Afiliado= $this->obtenerRegistros->consultarUsuario($RecibeDatos['Cedula']);
             // $Datos=[
             //     "ID_Afiliado" => $ID_Afiliado,

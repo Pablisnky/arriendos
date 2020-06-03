@@ -27,6 +27,15 @@
             $resultados =  $this->db->registros();
             return $resultados;
         }
-
-       
+        public function insertarCodigoAleatorio($Correo, $Aleatorio){
+            $this->db->Insertar("INSERT INTO codigo_recuperacion(correo, codigoAleatorio, Fecha_solicitud)VALUES('$Correo','$Aleatorio',NOW())");
+            
+            //Se ejecuta la inserción de los datos en la tabla
+            if($this->db->execute()){
+                return true;
+            }
+            else{
+                return false;
+            }
+        }       
     }

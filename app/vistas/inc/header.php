@@ -29,8 +29,8 @@
 		<header>
 			<a class="a_3 a_3b enlace_2a" href="">Constructoras</a>	
 			<a class="a_3 a_3c enlace_2a" href="">Arrendadoras</a>
-			<a class="a_3 a_3f enlace_2a" href="">Aliados</a>
-			<a class="a_3 a_3d" href="<?php echo RUTA_URL;?>">home</a> 
+			<a class="a_3 a_3f enlace_2a" href="">Proyectos inmobiliarios</a>
+			<a class="a_3 a_3d" href="<?php echo RUTA_URL;?>">Home</a> 
 			<a class="a_3 a_3e li_2"href="">Nuestro ADN</a>				
 			<a class="a_3 a_3a" href="<?php echo RUTA_URL . '/registro_C';?>">Registrarse</a>
 			<a class="a_3" href="<?php echo RUTA_URL . '/Login_C';?>">Inicia sesión</a>
@@ -60,4 +60,4 @@
 			</div> 
 		</header>
 
-   <!-- No se cierrra la etiqueta <body> porque se cierra es el footer -->
+   <!-- No se cierrra la etiqueta <body> porque se cierra en el footer -->

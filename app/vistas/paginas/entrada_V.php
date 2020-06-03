@@ -43,10 +43,10 @@
                     <th class="th_4">DIRECCION</th>
                     <th class="th_5">PRECIO</th>
                 </thead>   
-                <tbody>     <?php
-                    //Se traen los datos obtenidos en la consulta 
-                    foreach($Datos["inmueblesPubli"] as $InmueblesPub) :
-                        $ID_Inmueble= $InmueblesPub->ID_Inmueble;
+                <tbody>     
+                    <?php
+                    foreach($Datos["Inf_Inmueble"] as $InmueblesPub) :
+                        $ID_Inmueble = $InmueblesPub->ID_Inmueble;
                             ?>
                             <tr class="tr_5">
                                 <td><?php echo $InmueblesPub->ID_Inmueble;?></td>
@@ -60,11 +60,14 @@
                             </tr> 
                             <tr> 
                                 <td class="td_3" colspan="8">
-                                    <!-- Se traen los datos de la consulta de fotografias del inmueble -->
-                                    <?php
-                                        foreach($Datos["inmueblesFoto"] as $FotoInmueble){  ?>
-                                            <img class="imagen_4" src="<?php echo RUTA_URL?>/images/<?php echo $FotoInmueble->nombre_img;?>" alt="Foto">    
-                                                                <?php
+                                    <?php 
+                                    //Se traen los datos de la consulta de fotografias del inmueble
+                                    //Se CONSULTA haciendo una petición al modelo por las fotos de un inmueble en particular (esta consulta debería realizarse en el controlador pero no encuentro forma de hacerla alla y traerme el resultado para la vista)
+                                    $FotoInmueble= $this->ConsultaEntrada_M->consultarFotoInmuebles($ID_Inmueble);  
+                                    foreach($FotoInmueble as $FotoInm){  
+                                        $NombreFoto = $FotoInm->nombre_img; ?>
+                                        <img class="imagen_4"  src="<?php echo RUTA_URL?>/images/<?php echo $FotoInm->nombre_img;?>" alt="Foto">  
+                                            <?php
                                         }           
                                     ?>                                     
                                 </td> 

@@ -232,10 +232,11 @@ function OcultarDiv(){
 function abrirDetalles(ID_Inm){     
         window.open("../TipoInmueble_C/index/" + ID_Inm, "ventana1", "width=1300,height=650,scrollbars=YES");
 }
+
 // *************************************************************************************************
 // Llamada desde entrada_V.php
 function abrirDetalles_2(ID_Inm){     
-    window.open("TipoInmueble_C/index/" + ID_Inm, "ventana1", "width=1300,height=650,scrollbars=YES");
+    window.open("../TipoInmueble_C/index/" + ID_Inm, "ventana1", "width=1300,height=650,scrollbars=YES");
 }
 
 // ***************************************************************************************************
@@ -243,6 +244,7 @@ function abrirDetalles_2(ID_Inm){
 function formasPago(){            
     window.open("../FormasPago_C", "ventana1", "width=500,height=600,scrollbars=YES");
 }
+
 // ***************************************************************************************************
 //LLamada desde descripcion_casa.php  descripcion_habitacion.php
 function cerrarVentana(){            

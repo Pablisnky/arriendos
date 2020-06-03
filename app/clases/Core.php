@@ -57,12 +57,11 @@ class Core{
         $this->parametros = $url ? array_values($url) : [1];
 
         // echo "Los parametros enviados son: ";
-        //  print_r($this->parametros);
+        // print_r($this->parametros);
         // echo "<br>";
         // echo "************************************************************************"  . "<br>";
         //llamar callback con parametros array
         call_user_func_array([$this->controladorActual, $this->metodoActual], $this->parametros);
-        
     }
 
     public function geturl(){
